@@ -19,4 +19,5 @@ al ejecutar ulimit -s unlimited eliminamos la restriccion en el tamaño del stac
 tecnicamente no es debugging porque el programa anda, sino que es problema de manejo de datos de la pc
 dividir las cuentas en cuentas mas chicas, alocando menos cantidad de memoria para cada una.
 
-
+funny:
+al utilizar la opcion -DDEBUG se ejecutan ciertas partes del codigo que de otra manera no lo harian.
