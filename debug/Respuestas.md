@@ -21,3 +21,13 @@ dividir las cuentas en cuentas mas chicas, alocando menos cantidad de memoria pa
 
 funny:
 al utilizar la opcion -DDEBUG se ejecutan ciertas partes del codigo que de otra manera no lo harian.
+
+fpe:
+Al incluir -DTRAPFPE se puede utilizar la funcion set_fpe_x87_sse(). Para poder linkear esta funcion hay que compilar el programa mediante el codigo del programa y el codigo fpe_x87_sse.c.
+Esto sería:
+gcc programa.c fpe_x87_sse/fpe_x87_sse.c comparison.c -DTRAPFPE -Ifpe_x87_sse -lm
+ -o programa.e
+Como dice en la nota se tiene que agregar la opcion -lm y aclarar la carpeta donde se busca el archivo .h
+Al agregar la opcion -DTRAPFPE cuando queremos ejecutar una operación prohibida sale este mensaje:
+Excepción de coma flotante (`core' generado)
+Sin embargo cuando no agregamos la opcion -DTRAPFPE la salida del programa al hacer una operacion prohibida no cambia, sino que se ejecuta normalmente.
